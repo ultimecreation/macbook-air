@@ -24,7 +24,8 @@ const ProductInfos = () => {
           className="bg-white p-3 d-flex flex-column"
           style={{ borderRadius: "14px" }}
         >
-          {/* <h3>Personnalisez votre MacBook Air - Gris sidéral</h3>
+          <h3>Personnalisez votre MacBook Air - Gris sidéral</h3>
+
           <ul className="list-unstyled mt-4">
             <li>
               Puce Apple M1 avec CPU 8 cœurs, GPU 7 cœurs, Neural Engine 16
@@ -36,7 +37,7 @@ const ProductInfos = () => {
             <li>Deux ports Thunderbolt/USB 4</li>
             <li>Adaptateur secteur USB‑C 30 W</li>
             <li>Magic Keyboard rétroéclairé avec Touch ID - Français</li>
-          </ul> */}
+          </ul>
         </div>
       </div>
     </>
