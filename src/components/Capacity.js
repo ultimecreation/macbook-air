@@ -1,6 +1,23 @@
+import { useEffect, useState } from "react";
 import CapacityWrapper from "./CapacityWrapper";
 
 const Capacity = ({ capacityType }) => {
+  const [items, setItems] = useState([]);
+  console.log(items);
+
+  useEffect(() => {
+    fetch(`http://localhost:3030/${capacityType}`)
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setItems(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [capacityType]);
+
   return (
     <div>
       {capacityType === "ram" ? (
