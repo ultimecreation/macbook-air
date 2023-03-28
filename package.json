@@ -31,11 +31,14 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ],
-    "jest": {
-      "moduleNameMapper": {
-        "^axios$": "axios/dist/axios.js"
-      }
+    ]
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^axios$": "axios/dist/axios.js"
     }
+  },
+  "devDependencies": {
+    "msw": "^1.2.1"
   }
 }
