@@ -23,8 +23,14 @@ test("Gestion des erreurs RAM et SSD", async () => {
   //   const alerts = await screen.findAllByText("Nous avons une erreur");
   //   expect(alerts).toHaveLength(2);
 
+  // Situation 1
+  //screen.debug();
+
   await waitFor(async () => {
     const alerts = await screen.findAllByRole("alert");
     expect(alerts).toHaveLength(2);
   });
+
+  // Situation 2
+  //screen.debug();
 });
