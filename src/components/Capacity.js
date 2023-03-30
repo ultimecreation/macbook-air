@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import AlertNotification from "./AlertNotification";
 import CapacityWrapper from "./CapacityWrapper";
 import RamCapacities from "./RamCapacities";
 import SsdCapacities from "./SsdCapacities";
@@ -7,6 +8,7 @@ import SsdCapacities from "./SsdCapacities";
 const Capacity = ({ capacityType }) => {
   const [items, setItems] = useState([]);
   const [ssd, setSsd] = useState(0);
+  const [error, setError] = useState(false);
 
   //console.log(items);
 
@@ -32,9 +34,13 @@ const Capacity = ({ capacityType }) => {
         setItems(response.data);
       })
       .catch((error) => {
-        console.log(error);
+        setError("Error");
       });
   }, [capacityType]);
+
+  if (error) {
+    return <AlertNotification />;
+  }
 
   return (
     <div>
