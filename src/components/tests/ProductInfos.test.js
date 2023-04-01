@@ -1,10 +1,10 @@
-import { render, screen } from "@testing-library/react";
-import { MacBookProviders } from "../../providers/MacBookProviders";
+import { render, screen } from "../../test-utils";
 import ProductInfos from "../ProductInfos";
 
 describe("Product Infos", () => {
   test("Tester les informations initiales du produit", () => {
-    render(<ProductInfos />, { wrapper: MacBookProviders });
+    // render(<ProductInfos />, { wrapper: MacBookProviders });
+    render(<ProductInfos />);
 
     // Image
     const productImg = screen.getByRole("img", { name: /macbookAir/i });

@@ -1,7 +1,6 @@
-import { render, screen, waitFor } from "@testing-library/react";
 import { rest } from "msw";
 import { server } from "../../mocks/server";
-import { MacBookProviders } from "../../providers/MacBookProviders";
+import { render, screen, waitFor } from "../../test-utils";
 import Configuration from "../Configuration";
 
 test("Gestion des erreurs RAM et SSD", async () => {
@@ -14,7 +13,8 @@ test("Gestion des erreurs RAM et SSD", async () => {
     })
   );
 
-  render(<Configuration />, { wrapper: MacBookProviders });
+  // render(<Configuration />, { wrapper: MacBookProviders });
+  render(<Configuration />);
 
   // Bootstrap Alert
   // FIND
