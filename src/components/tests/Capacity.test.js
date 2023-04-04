@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen } from "../../test-utils";
 import Capacity from "../Capacity";
 
 describe("Vérifier les capacités RAM et SSD", () => {

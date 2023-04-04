@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useAndCheckMacBookDetails } from "../providers/useAndCheckMacBookDetails";
 import AlertNotification from "./AlertNotification";
 import CapacityWrapper from "./CapacityWrapper";
 import RamCapacities from "./RamCapacities";
@@ -9,6 +10,8 @@ const Capacity = ({ capacityType }) => {
   const [items, setItems] = useState([]);
   const [ssd, setSsd] = useState(0);
   const [error, setError] = useState(false);
+
+  const { handleRamChange } = useAndCheckMacBookDetails();
 
   //console.log(items);
 
@@ -49,7 +52,7 @@ const Capacity = ({ capacityType }) => {
           <select
             className="form-select form-select-outline w-50"
             aria-label="Default select"
-            onChange={() => {}}
+            onChange={handleRamChange}
           >
             {items.map((capacity) => {
               return (

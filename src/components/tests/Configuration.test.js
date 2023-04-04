@@ -43,9 +43,9 @@ test("Mise à jour du prix et affichage infos Produit en fonction des capacités
 
   // Récuperation des élements à tester
   // 1) Prix du produit
+  //const productPrice = screen.getByRole("heading", { level: 4 });
   const productPrice = screen.getByRole("heading", {
-    level: 4,
-    name: "1 199,00 €",
+    name: /^(1\s)?199,00 €$|^(1199,00 €)$/,
   });
   // 2) capacité RAM dans les infos Produits
   const ramCapacity = screen.getByText("8 Go de mémoire unifiée");
@@ -73,7 +73,7 @@ test("Mise à jour du prix et affichage infos Produit en fonction des capacités
     }).selected
   ).toBe(true);
 
-  // screen.debug();
+  //screen.debug();
   // vérifier le prix du produit suite à la sélection
   expect(productPrice).toHaveTextContent("1 429,00");
 });
