@@ -8,16 +8,10 @@ import SsdCapacities from "./SsdCapacities";
 
 const Capacity = ({ capacityType }) => {
   const [items, setItems] = useState([]);
-  const [ssd, setSsd] = useState(0);
   const [error, setError] = useState(false);
 
-  const { handleRamChange } = useAndCheckMacBookDetails();
-
-  //console.log(items);
-
-  const handleSsdChange = (e) => {
-    setSsd(+e.target.value);
-  };
+  const { handleRamChange, handleSsdChange, productInfos } =
+    useAndCheckMacBookDetails();
 
   useEffect(() => {
     //     fetch(`http://localhost:3030/${capacityType}`)
@@ -74,7 +68,7 @@ const Capacity = ({ capacityType }) => {
                 id={capacity.id}
                 label={capacity.label}
                 price={capacity.price}
-                selectedSsd={ssd}
+                selectedSsd={productInfos.inputssd}
                 handleSsdChangeFunc={handleSsdChange}
               />
             );

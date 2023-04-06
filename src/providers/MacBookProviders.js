@@ -7,6 +7,8 @@ export const MacBookProviders = (props) => {
     capacityRam: "8 Go",
     capacityssd: "256 Go",
     ram: 0,
+    ssd: 0,
+    inputssd: 0,
   };
 
   const [productInfos, setProductInfos] = useState(initialState);
@@ -29,9 +31,19 @@ export const MacBookProviders = (props) => {
     }));
   };
 
-  const subtotal = productInfos.macBookAirPrice + productInfos.ram;
+  const handleSsdChange = (event) => {
+    const ssdCapacity = parseInt(event.target.value);
+    setProductInfos((prevState) => ({
+      ...prevState,
+      ssd: ssdCapacity,
+      inputssd: ssdCapacity,
+    }));
+  };
 
-  const value = { subtotal, handleRamChange, productInfos };
+  const subtotal =
+    productInfos.macBookAirPrice + (productInfos.ram + productInfos.ssd);
+
+  const value = { subtotal, handleRamChange, handleSsdChange, productInfos };
 
   return <MacBookContext.Provider value={value} {...props} />;
 };

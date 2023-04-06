@@ -80,4 +80,15 @@ test("Mise à jour du prix et affichage infos Produit en fonction des capacités
   // Changement RAM dans infos produits "8 Go de mémoire unifiée" => "16 Go de mémoire unifiée"
   expect(ramCapacity).toHaveTextContent("16 Go de mémoire unifiée");
   //screen.debug();
+
+  // Cocher "SSD de 512 Go (230 €)"
+  const inputSsd512 = await screen.findByLabelText("SSD de 512 Go", {
+    exact: false,
+  });
+  expect(inputSsd512).toBeInTheDocument();
+  await user.click(inputSsd512);
+  expect(inputSsd512).toBeChecked();
+
+  // Revérifier le prix du produit (1199 + 230 + 230 = 1659)
+  expect(productPrice).toHaveTextContent("1 659,00");
 });
