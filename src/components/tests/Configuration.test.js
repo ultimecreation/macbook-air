@@ -91,4 +91,7 @@ test("Mise à jour du prix et affichage infos Produit en fonction des capacités
 
   // Revérifier le prix du produit (1199 + 230 + 230 = 1659)
   expect(productPrice).toHaveTextContent("1 659,00");
+
+  // SSD de 256 Go => SSD de 512 Go
+  expect(ssdCapacity).toHaveTextContent("SSD de 512 Go");
 });
