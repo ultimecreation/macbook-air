@@ -94,4 +94,20 @@ test("Mise à jour du prix et affichage infos Produit en fonction des capacités
 
   // SSD de 256 Go => SSD de 512 Go
   expect(ssdCapacity).toHaveTextContent("SSD de 512 Go");
+
+  // retirer la RAM de 16 Go
+  await user.selectOptions(selectElement, "0");
+  expect(selectElement.value).toBe("0");
+
+  expect(
+    screen.getByRole("option", {
+      name: /8 go de mémoire unifiée/i,
+    }).selected
+  ).toBe(true);
+
+  // vérifier le prix suite à cette modification
+  // 1199 + 230 RAM + 230 SSD - 230 RAM = 1429
+  expect(productPrice).toHaveTextContent("1 429,00");
+
+  expect(ramCapacity).toHaveTextContent("8 Go de mémoire unifiée");
 });
