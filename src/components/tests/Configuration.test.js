@@ -76,4 +76,8 @@ test("Mise à jour du prix et affichage infos Produit en fonction des capacités
   //screen.debug();
   // vérifier le prix du produit suite à la sélection
   expect(productPrice).toHaveTextContent("1 429,00");
+
+  // Changement RAM dans infos produits "8 Go de mémoire unifiée" => "16 Go de mémoire unifiée"
+  expect(ramCapacity).toHaveTextContent("16 Go de mémoire unifiée");
+  //screen.debug();
 });
