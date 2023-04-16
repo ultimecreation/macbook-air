@@ -4,7 +4,7 @@ import Validation from "../Validation";
 
 describe("Composant Validation", () => {
   // 'configurationStep' => 'confirmationStep' => 'cartStep'
-  test("Bouton 'Valider' s'affiche correctement", () => {
+  test("Bouton 'Valider' s'affiche correctement.", () => {
     render(<Validation nextLevel="confirmationStep" />);
     const buttonConfirmation = screen.getByRole("button", { name: /valider/i });
     expect(buttonConfirmation).toBeInTheDocument();

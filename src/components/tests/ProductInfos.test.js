@@ -2,7 +2,7 @@ import { render, screen } from "../../test-utils";
 import ProductInfos from "../ProductInfos";
 
 describe("Product Infos", () => {
-  test("Tester les informations initiales du produit", () => {
+  test("Tester les informations initiales du produit macBookAir", () => {
     // render(<ProductInfos />, { wrapper: MacBookProviders });
     render(<ProductInfos />);
 
