@@ -4,10 +4,10 @@ import Validation from "../Validation";
 
 describe("Composant Validation", () => {
   // 'configurationStep' => 'confirmationStep' => 'cartStep'
-  xit("Bouton 'Valider' s'affiche correctement.", () => {
+  it("Bouton 'Valider' s'affiche correctement.", () => {
     render(<Validation nextLevel="confirmationStep" />);
     const buttonConfirmation = screen.getByRole("button", { name: /valider/i });
-    expect(buttonConfirmation).not.toBeInTheDocument();
+    expect(buttonConfirmation).toBeInTheDocument();
   });
 
   test("Bouton 'Ajouter au panier' s'affiche correctement", () => {

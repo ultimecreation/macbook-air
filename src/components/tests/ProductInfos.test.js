@@ -1,10 +1,20 @@
-import { render, screen } from "../../test-utils";
+import { prettyDOM, render, screen } from "../../test-utils";
 import ProductInfos from "../ProductInfos";
 
 describe("Product Infos", () => {
   test("Tester les informations initiales du produit macBookAir", () => {
     // render(<ProductInfos />, { wrapper: MacBookProviders });
-    render(<ProductInfos />);
+    //const view = render(<ProductInfos />); // container: HTMLDivElement
+    const { container } = render(<ProductInfos />); // container: HTMLDivElement
+    // logRoles(container);
+
+    const div = document.createElement("div");
+    div.innerHTML = "<div><h1>Hello World</h1></div>";
+    console.log(prettyDOM(div));
+
+    console.log(prettyDOM(container));
+
+    // screen.debug();
 
     // Image
     const productImg = screen.getByRole("img", { name: /macbookAir/i });
